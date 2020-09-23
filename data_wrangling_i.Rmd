@@ -1,21 +1,39 @@
 ---
-title: "Simple document"
-output: html_document
+title: "Data Import"
+output: github_document
+Author: Adam R
+editor_options: 
+  chunk_output_type: console
 ---
-
-I'm an R Markdown document! 
-
-# Section 1
-
-Here's a **code chunk** that samples from 
-a _normal distribution_:
-
-```{r}
-samp = rnorm(100)
-length(samp)
+```{r setup}
+library(tidyverse)
 ```
 
-# Section 2
+## read in some data
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+read in the litters dataset.
+
+```{r}
+litters_df = read_csv("./data_import_examples/FAS_litters.csv")
+litters_df = janitor::clean_names(litters_df)
+```
+
+## Take a look at the data
+
+printing in the console.
+
+```{r}
+litters_df
+```
+
+```{r}
+head(litters_df)
+```
+
+```{r}
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```
