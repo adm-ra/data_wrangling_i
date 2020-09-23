@@ -1,0 +1,12 @@
+---
+title: "Tidy Data"
+output: github_document
+Author: Adam R
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup}
+library(tidyverse)
+```
+
+
